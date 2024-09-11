@@ -1,0 +1,918 @@
+//////////////////////////////
+/// LOGO
+.logo {
+  height: 3rem;
+  margin-left: 2rem;
+}
+
+// .search-input{
+//   // border: none;
+//   width: 90%;
+//   color: $grey-dark-1;
+//   background-color:$grey-light-3;
+//   // width: 7.2rem;
+//   transition: all .5s ease-in-out;
+//   border:none;
+// }
+
+// .search-input:focus{
+//   width: 55rem;
+// }
+//////////////////////////////
+/// SEARCH
+
+.search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  // padding: 0.5rem 0.5rem;
+  // border-radius: 100px;
+  // // width: 43rem;
+  // transition: all .5s ;
+  // height: 2.2rem;
+  flex: 0 0 40%;
+  // background-color: red;
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: $grey-light-2;
+  }
+
+  &__icon {
+    height: 2.2rem;
+    width: 2.2rem;
+    fill: $grey-dark-3;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: $grey-light-2;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    // margin чтобы оттеснить кнопку с иконкой внутри
+    // Так кнопка окажется выше инпута
+    margin-right: -3.5rem;
+ 
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: $grey-light-3;
+    }
+    &::placeholder {
+      font-weight: 100;
+      font-size: inherit;
+      color: $grey-light-4;
+    }
+  }
+
+  // Когда будет мышь будет наведена на инпут, то бэкколор кнопка стнет тоже такого же цветаю А зиначально они различаются
+  &__input:focus + &__button {
+    background-color: $grey-light-3;
+  }
+
+  &__button {
+    border: none;
+    background-color: $grey-light-2;
+    &:focus {
+      outline: none;
+    }
+    // Когда кликаем на мышку будет опускаться пониже
+    &:focus {
+      transform: translateY(2px);
+    }
+  }
+}
+//////////////////////////////
+/// USER NAVIGATION
+
+.user-nav {
+  display: flex;
+  // height: 100%;
+  // align-items: center;
+  // justify-content: center;
+
+  // Используем  align-self: stretch;
+  // Свойство align-self задает выравнивание вдоль поперечной оси для отдельно взятого flex-блока. По сути align-self - это свойство align-items, но для конкретного блока.
+  //stretch; Блок растянут, занимая все доступное место по поперечной оси, при этом все же учитываются min-width и max-width, если они заданы. Если же задана ширина и высота для элемента - stretch будет проигнорирован.
+  align-self: stretch;
+
+  // Выставялем всем дочерним элементам(3дива) сразу, пэдинг и курсор
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  // Выставялем всем дочерним элементам(3дива) смену бэка при наведении
+  & > *:hover {
+    background-color: $grey-light-3;
+  }
+  &__icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    fill: $grey-dark-2;
+  }
+  &__icon-box {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // height: 100%;
+    // width: 6.5rem;
+    position: relative;
+    // &:hover{
+    //   background-color: $grey-light-3
+    // }
+  }
+  &__notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: $primary;
+    color: #fff;
+  }
+  &__user {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    gap: 1rem;
+    margin-right: 2rem;
+    // height: 100%;
+    // &:hover{
+    //   background-color: $grey-light-3
+    // }
+  }
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+  &__user-name {
+    font-size: 1.4rem;
+    color: $grey-dark-2;
+  }
+}
+
+// .cabinet-link--icons--1 {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+//   width: 100%;
+//   position: relative;
+// }
+
+// .cabinet-link--icons--1::after {
+//   display: flex;
+//   content: "7";
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+//   top: 22%;
+//   right: 18%;
+//   font-size: 0.8rem;
+//   height: 1.8rem;
+//   width: 1.8rem;
+//   border-radius: 50%;
+//   background-color: $primary;
+//   color: #fff;
+// }
+
+// .cabinet-link--icons--1:hover,
+// .cabinet-link--icons--1:active,
+// .cabinet-link--icons--2:hover,
+// .cabinet-link--icons--2:active {
+//   background-color: $grey-light-3;
+// }
+// .cabinet-link--user {
+//   text-decoration: none;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .cabinet-link--user:hover,
+// .cabinet-link--user:active {
+//   background-color: $grey-light-3;
+// }
+
+// .nav-icon{
+//   height: 1.7rem;
+// width: 1.7rem;
+// fill: #fff;
+// }
+
+.location-icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  fill: $primary-light;
+  margin-right: 0.5rem;
+}
+
+.star-icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  fill: $primary-light;
+}
+
+.list-icon {
+  height: 1rem;
+  width: 1rem;
+  fill: $primary-light;
+}
+.sidebar {
+  //  display: flex;
+  //  flex-direction: column;
+  //  justify-content: center;
+  //  align-items: flex-start;
+  //  padding-left: 2rem;
+  width: 100%;
+  // @media only screen and(max-width: $bp-medium) {
+  //   display: flex;
+  // }
+}
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  // gap: 3.5rem;
+  // height: 100%;
+  // padding-left: 2rem;
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 5rem;
+
+  @media only screen and(max-width: $bp-medium) {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  &__icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: #fff;
+    margin-right: 2rem;
+    @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: .7rem;    
+    width: 1.5rem;
+    height: 1.5rem;
+    }
+  }
+  &__items {
+    // display: flex;
+    // flex-direction: row;
+    // // margin: 3.5rem 2rem;
+    // gap: 3rem;
+    // justify-content: center;
+    // align-items: center;
+    width: 100%;
+    position: relative;
+    // Для небольшого оступа между элементами
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bp-medium) {
+       margin-bottom: 0;
+      }
+    }
+    @media only screen and (max-width: $bp-medium) {
+      // Так элементы займут по четверти положенного места
+      flex:1;
+    }
+  }
+  // Animation
+  &__items::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: $primary;
+    // ЧТобы анимация начиналась центра слева у элементы
+    transform: scaleY(0);
+    transition: transform 0.2s,
+      // расщирение длины займет 4 десятых секунды с задержкой в 2 десятых
+      width 0.4s 0.2s cubic-bezier(1, 0, 0, 1);
+    //Анимация для нажатия по элементу
+    background-color: 0.1s;
+  }
+
+  // еще и для активного элемента
+  &__items:hover::before,
+  &__items--active::before {
+    // И потом расходилась на всю высоту элемента
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  // Когда нажимаем на item то есть на ссылку будет меняться цвет бэка
+  &__items:active:before {
+    background-color: $primary-light;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $grey-light-1;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    // Для того чтобы содержание ссылку не перкрывалось фоном при анимации
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    // Выравниваем по центру текс с иконками и ставим пэдинг
+    @media only screen and (max-width: $bp-medium) {
+     justify-content: center;
+     padding: 2rem;
+
+     @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem .5rem;
+    }
+    }
+  }
+}
+.copyright__text {
+  display: flex;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $grey-light-4;
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
+}
+// .link-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   .text_link {
+//     margin-left: 2rem;
+//     text-decoration: none;
+//     color: #fff;
+//     font-size: 1.45rem;
+//     text-transform: uppercase;
+//   }
+// }
+
+// &__list {
+//   text-transform: uppercase;
+//   list-style: none;
+//   color: #fff;
+// transition:translateX 2s ease-in-out;
+
+// .link--nav {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   text-decoration: none;
+//   color: #fff;
+//   font-size: 1.45rem;
+// }
+// .link--nav:hover {
+//   background-color: $primary-light;
+//   padding: 1rem 100%;
+//   // transform: translateX(100%) ;
+// }
+// }
+
+// .text_link {
+//   margin-left: 2rem;
+// }
+
+//   .content--li{
+//   width: 18%;
+//   height: 4rem;
+
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   .link--nav1 {
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     text-decoration: none;
+//     color: #fff;
+//     font-size: 1.45rem;
+//   }
+//   .link--nav1:hover{
+
+//     background-color: $primary-light;
+//     // padding:1rem 100%;
+//     // transform: translateX(100%) ;
+//   }
+// }
+
+// .content--li:hover{
+//   background-color: $primary-light;
+// background-image: linear-gradient(to right, grey,green);
+// }
+
+.gallery {
+  display: flex;
+  &__photo {
+    width: 33.333333333333333%;
+  }
+  &__photo:last-child {
+    width: 33.333333333333337%;
+  }
+}
+// .gallery {
+//   display: flex;
+//   &__photo{
+//     width: 100%;
+//     display: block;
+//   }
+// }
+
+.information {
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 6.5rem;
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.8rem;
+    padding: 1.25rem 2rem;
+    }
+  &__text {
+    border-bottom: 1px solid;
+  }
+
+  &__nameStar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .information__name {
+      margin: 0 3rem;
+    }
+  
+   
+    .heading {
+      font-size: 2.3rem;
+      color: $grey-dark-2;
+      font-weight: 200;
+      text-transform: uppercase;
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.8rem;
+        }
+    }
+  }
+  &__location {
+    display: flex;
+    align-items: center;
+    color: $primary;
+    margin: 0 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  &__location-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+      }
+    .rating {
+      height: 100%;
+      width: 8.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: $primary-light;
+      // @media only screen and (max-width: $bp-small) {
+      //   font-size: 1.8rem;
+      //   }
+      &__heading {
+        font-weight: 200;
+        font-size: 2.2rem;
+        @media only screen and (max-width: $bp-small) {
+          font-size: 1.8rem;
+          }
+      }
+      &__text {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        @media only screen and (max-width: $bp-small) {
+          font-size: .5rem;
+          }
+      }
+    }
+  }
+}
+
+// .link--location {
+//   font-size: 1.2rem;
+//   text-decoration: none;
+// }
+// .link--location:hover {
+//   color: $grey-dark-1;
+// }
+
+////////////////////////////
+/// BUTTON INLINE
+.btn-inline {
+  border: none;
+  color: $primary;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+    color: #500e0e;
+  }
+
+  &:hover {
+    color: $grey-dark-1;
+    span {
+      margin-left: 8px;
+    }
+  }
+// &:focus
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+.abouthotel {
+  // height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // width: 90%;
+  // border-bottom: 1px solid $grey-light-3;
+  // &__text {
+  //   font-size: 1.4rem;
+  //   margin: 2rem;
+  //   display: flex;
+  //   justify-content: space-evenly;
+  //   align-content: center;
+  // }
+
+}
+
+//////////////////////////
+/// PARAGRAPH
+.text-hotel__text {
+  font-size: 1.4rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  // border-bottom: 1px solid $grey-light-3;
+}
+.text-hotel__text:not(:last-of-type) {
+  margin-bot: 2rem;
+  color: #751414;
+}
+
+//////////////////////////
+/// LIST
+// .list-hotel {
+//   height: 30%;
+//   display: flex;
+//   margin: 0 2rem;
+//   justify-content: space-around;
+//   align-items: center;
+//   font-size: 1.4rem;
+//   width: 90%;
+//   border-bottom: 1px solid $grey-light-3;
+// }
+.list {
+  margin-left: 2rem;
+  list-style: none;
+  // margin: 2rem 0;
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.4rem;
+  // width: 90%;
+  border-top: 1px solid $grey-light-3;
+  border-bottom: 1px solid $grey-light-3;
+  // Благодаря этому свойсву лист разделится на две части
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    // Older browsers
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
+
+    // New browsers - используем masks
+    // Вначале делаем цвет который покрает весь элемент (то бишь квадрат)
+    // background-color: $primary;
+    // Тут выбираем сам свг
+    // --webkit-mask-image: url(../img/chevron-thin-right.svg);
+    // mask-image: url(../img/chevron-thin-right.svg);
+    // А тут делаем , чтобы он покрывал фон. То естьчто он не покроет(пустоту) то она не отобразится
+    // --webkit-mask-size: cover;
+    // mask-size: cover;
+       // New browsers - используем masks
+       @supports (--webkit-mask-image: url()) or (mask-image: url()){
+        background-color: $primary;
+        --webkit-mask-image: url(../img/chevron-thin-right.svg);
+        --webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        // ЧТобы иконка опять стала розовой
+        background-image: none;
+       }
+  }
+}
+
+//////////////////////////
+/// RECOMEND
+.recommends {
+  margin: 2rem 0;
+  // height: 40%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-top: 1px solid $grey-light-3;
+
+  &__text {
+    font-size: 1.3rem;
+    // для отдаления текст от картинок
+    margin-right: auto;
+  }
+  &__photos {
+    height: 4rem;
+    // border-radius: 50%;
+    box-sizing: content-box;
+    display: flex;
+    // gap: 0.5rem;
+    border: 3px solid #fff;
+
+    .testimonial-photo {
+      height: 4rem;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .testimonial-photo:not(:last-child) {
+      margin-right: -2rem;
+      // height: 4rem;
+      // border-radius: 50%;
+      // border: 3px solid #fff;
+    }
+  }
+}
+
+// .card::after::after {
+//   height: 4rem;
+//   width: 2rem;
+//   position: absolute;
+//   clip-path: polygon(
+//     4% 51%,
+//     15% 15%,
+//     26% 0,
+//     58% 0,
+//     53% 10%,
+//     46% 27%,
+//     37% 45%,
+//     33% 66%,
+//     50% 65%,
+//     50% 100%,
+//     0 100%,
+//     0% 85%
+//   );
+//   top: 20%;
+//   left: 20%;
+//   background-color: $grey-light-2;
+//   content: "";
+// }
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 45%;
+  position: relative;
+
+  @media only screen and (max-width: $bp-medium) {
+   padding: 2rem;
+   margin-bottom: 3rem;
+   }
+
+  &__text {
+    z-index: 10;
+    margin: 3rem;
+    font-size: 1.5rem;
+  }
+  .testimonial {
+    display: flex;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
+    &__photo {
+      height: 4.5rem;
+      border-radius: 50%;
+    }
+    &__name-date {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      // gap: 1rem;
+      margin-left: 1rem;
+      font-size: 1.1rem;
+    }
+    &__text {
+      // width: 100%;
+      font-size: 1.1rem;
+      color: $grey-dark-3;
+    }
+    &__name {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    &__rating {
+      font-size: 2.5rem;
+      font-weight: 100;
+      color: $primary;
+    }
+  }
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    font-size: 20rem;
+    // С помощью line height уменьшили высоту элемента
+    line-height: 1;
+    font-style: serif;
+    color: $grey-light-2;
+    font-family: sans-serif;
+    // height: 4rem;
+    // width: 2rem;
+  }
+}
+
+.booking {
+  &__text {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+  }
+}
+// .link {
+//   border: none;
+//   color: $primary;
+// }
+
+// .link--testimonial {
+//   font-size: 1.4rem;
+//   text-decoration: none;
+//   border-bottom: 1px solid;
+//   transition: all 0.5s ease-in-out;
+
+//   .tesimonial-link {
+//     display: flex;
+//     gap: 0.5rem;
+//   }
+// }
+// .link--testimonial:hover {
+//   color: black;
+//   .tesimonial-link {
+//     display: flex;
+//     gap: 1rem;
+//   }
+// }
+
+// .testimonial-photo {
+//   height: 4rem;
+//   border-radius: 50%;
+//   border: 1px solid #fff;
+// }
+
+/////////////////////////
+/// // CTA
+.cta {
+  background-color: #fff;
+  padding: 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+   }
+  &__book-now {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, $primary-light, $primary-dark);
+  color: #fff;
+  position: relative;
+  // чтобы скрытый элемент исчез
+  overflow: hidden;
+  cursor: pointer;
+
+  & > * {
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+    text-align: center;
+  }
+  &__invisible {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, $primary-light, $primary-dark);
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:active {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
